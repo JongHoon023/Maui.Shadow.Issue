@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Maui.Shadow.Crash.MainPage">
+
+    <VerticalStackLayout
+        Spacing="50">
+        <Button
+            Style="{StaticResource CrashButtonStyle}"
+            ImageSource="dotnet_bot.png"
+            ContentLayout="Left, 8"
+            HeightRequest="50"
+            Text="Crash Button" />
+
+        <Button
+            ImageSource="dotnet_bot.png"
+            ContentLayout="Left, 8"
+            HeightRequest="50"
+            Text="No Crash Button">
+            <Button.Style>
+                <Style
+                    TargetType="Button">
+                    <Setter
+                        Property="CornerRadius"
+                        Value="4" />
+                    <Setter
+                        Property="TextColor"
+                        Value="Red" />
+                    <Setter
+                        Property="BackgroundColor"
+                        Value="GreenYellow" />
+                    <Setter
+                        Property="VisualStateManager.VisualStateGroups">
+                        <VisualStateGroupList>
+                            <VisualStateGroup
+                                x:Name="CommonStates">
+                                <VisualState
+                                    x:Name="Normal" />
+
+                                <VisualState
+                                    x:Name="Disabled">
+                                    <VisualState.Setters>
+                                        <Setter
+                                            Property="BackgroundColor"
+                                            Value="DarkGray" />
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                                <VisualState
+                                    x:Name="PointerOver">
+                                    <VisualState.Setters>
+                                        <Setter
+                                            Property="BackgroundColor"
+                                            Value="MintCream" />
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                                <VisualState
+                                    x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter
+                                            Property="BackgroundColor"
+                                            Value="DarkGoldenrod" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateGroupList>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
+    </VerticalStackLayout>
+
+</ContentPage>
